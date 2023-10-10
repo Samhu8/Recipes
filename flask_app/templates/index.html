@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0px auto;
+            padding: 0px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        label {
+            width: 100px;
+            display: inline-block;
+            text-align: left;
+        }
+        .register_row, .login_row {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Share</h1>
+    <div class="msg">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p id="message">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <di class="container">
+        <div class="register">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <label for="first_name" class="register_row">First Name</label>
+                <input type="text" name="first_name" class="register_row"><br>
+                <label for="last_name" class="register_row">Last Name</label>
+                <input type="text" name="last_name" class="register_row"><br>
+                <label for="email" class="register_row">Email: </label>
+                <input type="text" name="email" class="register_row"><br>
+                <label for="password" class="register_row">Password: </label>
+                <input type="password" name="password" class="register_row"><br>
+                <label for="confirm_password" class="register_row">Confirm Pwd: </label>
+                <input type="password" name="confirm_password" class="register_row"><br>
+                <input type="submit" value="Register" class="register_row">
+            </form>
+        </div>
+        <div class="login">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <label for="email" class="login_row">Email: </label>
+                <input type="text" name="email" class="login_row"><br>
+                <label for="password" class="login_row">Password: </label>
+                <input type="password" name="password" class="login_row"><br>
+                <input type="submit" value="Login" class="login_row">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

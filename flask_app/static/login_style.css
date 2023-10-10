@@ -1,0 +1,22 @@
+body { 
+    background-color: rgb(213, 211, 211);
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+}
+#edit_btn {
+    margin-right: 20px;
+}
+table, th, td {
+    margin: 0px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+thead{
+    background-color: black;
+    color: whitesmoke;
+}
+tbody{
+    background-color: whitesmoke;
+}

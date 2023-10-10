@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(113, 227, 189);
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+}
+#login_lnk{
+    margin-right: 10px;
+}
+.recipe_details{
+    margin: 0px auto;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+.recipe_dtls {
+    display: flex;
+    gap: 10px;
+}
+.rcp_txt{
+    text-align: center;
+    width: 100%;
+    /* Need to align text */
+}

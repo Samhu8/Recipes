@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href= "{{url_for('static', filename='login_style.css') }}">
+</head>
+<body>
+    <h2>Welcome back, {{user.first_name}}!</h2>
+    <a href="/create" id="edit_btn">+ Create</a>
+    <a href="/logout">Logout</a>
+    <h5>All posted recipes:</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Under</th>
+                <th>Posted By</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipe_info %}
+            <tr>
+                <td>{{recipe.name}}</td>
+                <td>{{recipe.under}}</td>
+                <td>{{recipe.user.first_name}}</td>
+                {% if recipe.user_id == session["user_id"] %}
+                    <td><a href="/show_one/{{recipe.id}}">View receipe</a> | <a href="/edit/{{recipe.id}}">edit</a> | <a href="/delete/{{recipe.id}}">delete</a></td>
+                {% else %}
+                    <td><a href="/show_one/{{recipe.id}}">view recipe</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(173, 115, 115);
+    margin: 0px auto;
+    text-align: center;
+}
+.lnk {
+    margin-bottom: 15px;
+}
+#rcp_link {
+    margin-right: 10px;
+}
+.form_div {
+    display: flex;
+    justify-content: space-evenly;
+}
+.form_left{
+    width: 300px;
+}
+.form_right {
+    width: 250px;
+}

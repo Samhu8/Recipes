@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link rel="stylesheet" type="text/css" href= "{{url_for('static', filename='create_style.css') }}">
+</head>
+<body>
+    <div>
+        <h2>Add a New Recipe!</h2>
+        <div class="header">
+            <a href="/login">back to recipes</a>
+            <a href="/logout">logout</a>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p id="message">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <div>
+        <form action="/create" method="POST">
+            <div>
+                <input type="hidden" name="user_id">
+                <label for="name">Name: </label>
+                <input type="text" name="name"><br>
+                <label for="description">Description: </label>
+                <input type="text" name="description"><br>
+                <label for="instructions">Instructions: </label>
+                <input type="text" name="instructions"><br>
+            </div>
+            <div>
+                <label for="date">Date Cooked/Made: </label>
+                <input type="date" name="date"><br>
+                <label for="under">Under 30 minutes? </label>
+                <input type="radio" name="under" value="Yes">Yes
+                <input type="radio" name="under" value="No">No
+                <br>
+                <input type="submit" value="Submit" >
+            </div>
+        </form>
+    </div>
+</body>
+</html>

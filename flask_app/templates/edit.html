@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" type="text/css" href= "{{url_for('static', filename='edit_style.css') }}">
+</head>
+<body>
+    <div>
+        <h2>Edit Recipe!</h2>
+        <div class="lnk">
+            <a href="/login" id="rcp_link">Back to Recipes</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <form action="/edit/{{recipe.id}}" method="POST">
+            <div class="form_div">
+                <div class="form_left">
+                    <input type="hidden" name="user_id">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" value="{{recipe.name}}">
+                    <label for="description">Description: </label>
+                    <input type="text" name="description" value="{{recipe.description}}">
+                    <label for="instructions">Instructions: </label>
+                    <input type="text" name="instructions" value="{{recipe.instructions}}">
+                </div>
+                <div class="form_right">
+                    <label for="date">Date Cooked/Made: </label>
+                    <input type="date" name="date">
+                    <label for="under">Under 30 minutes? </label>
+                    <input type="radio" name="under" value="Yes">Yes
+                    <input type="radio" name="under" value="No">No
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+    </form>
+</body>
+</html>
